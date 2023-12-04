@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+@font-face {
+    font-family: 'raleway';
+    src: url("../src/assets/fonts/Raleway/Raleway-VariableFont_wght.ttf");
+}
+html{
+    scroll-behavior: smooth;
+}
+*{
+    margin: 0;
+    font-family: "raleway";
+    --footer-blue: #10284b;
+}
+
+button{
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+}

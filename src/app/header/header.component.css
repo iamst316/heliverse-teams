@@ -1,0 +1,35 @@
+header{
+    position: fixed;
+    width: 22rem;
+    padding: .2rem;
+    display: flex;
+    justify-content: space-around;
+    height: 3rem;
+    border-radius: 2rem;
+    background-color: #e8e5e4d0;
+    /* border: 2px solid blue; */
+    /* left: 37%; */
+    top: 10px;
+}
+
+header button{
+    width: 6rem;
+    border: 0;
+    font-size: 1rem;
+    border-radius: 2rem;
+}
+ 
+.header{
+    /* border: 2px solid green; */
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+}
+
+.unselected{
+    background-color: #ffffff00;
+}
+
+.selected{
+    background-color: #fff;
+}
