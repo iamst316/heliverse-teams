@@ -21,13 +21,17 @@ export class TeamsComponent implements OnInit {
   queryList = new Map();
 
   constructor(private router:Router, private httpClient: HttpClient, private teamShare:TeamShareService){}
+
   ngOnInit(){
     this.httpClient.get("assets/data.json").subscribe(res =>{
       // console.log(res);
       this.data = res;
-      this.display = res;
+      this.display = res;      
     })
   }
+
+  
+  
 
   AddtoTeam(user:any){
     if (this.team.has(user.domain)){

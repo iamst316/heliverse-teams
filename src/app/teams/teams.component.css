@@ -1,6 +1,6 @@
 .welcome{
     padding: 6rem;
-    /* border: 2px solid salmon; */
+    border: 2px solid salmon;
 }
 
 main{
@@ -8,11 +8,11 @@ main{
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-    /* border: 2px solid red; */
+    border: 2px solid red;
     /* margin: auto;
     width: 98%; */
     border-radius: .4rem;
-    box-shadow: 2px 2px 3px rgb(117, 117, 117);
+    /* box-shadow: 2px 2px 3px rgb(117, 117, 117); */
 }
 
 .h1,.h2{
@@ -29,8 +29,6 @@ main{
     color: rgba(255, 243, 243,);
     background-color: #ffffff;
     font-weight: 800;
-    background-clip: text;
-    -webkit-background-clip: text;
     animation: lFade 2s 1;
 }
 /* ------------------------------------- */
@@ -47,9 +45,6 @@ main{
         opacity: 0;
     }    
 }
-
-
-
 
 .arrow {
     
@@ -98,8 +93,50 @@ main{
 #teams{
     border: 2px dotted violet;
     /* height: 50vh; */
+    margin-top: 5rem;
+    min-width: 33%;
+    max-width: 60%;
 }
 
+.search-filter{
+    /* border: 2px solid navy; */
+    display: flex;
+    flex-flow: column wrap;
+}
+.search-filter > div{
+    /* border: 2px solid gold; */
+}
+
+.search-bar{
+    /* border: 2px solid lawngreen; */
+    display: flex;
+    /* align-items: center; */
+}
+.search-bar > *{
+    border: 0;
+    background-color: #ffffff00;
+}
+.search-bar > input{
+    width: 95%;
+    text-align: center;
+}
+
+input::placeholder{
+    text-align: center;
+}
+
+.filters{
+
+    /* border: 2px solid blue; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 1rem 0;
+}
+
+
+.display{
+    /* margin-top: 1rem; */
+}
 .display-data{
     display: grid;
     grid-template-columns: 1fr 1fr ;
@@ -107,7 +144,47 @@ main{
     row-gap: 2px;
 }
 
+.display >div{
+    border: 2px solid firebrick;
+}
+
 .card{
     border: 2px solid hotpink;
 
 }
+
+.name{
+    display: flex;
+    align-items: center;
+    padding: 0 .5rem 0 0;
+    margin-bottom: .25rem;
+}
+
+.details{
+    /* border: 2px solid gold; */
+    margin-bottom: .25rem;
+}
+
+.details>div:nth-child(1)>span{
+    color: orangered;
+    font-weight: 500;
+}
+
+.details>div:nth-child(2)>span{
+    color: green;
+    font-weight: 500;
+}
+
+.card>div:nth-child(3)>button{
+    padding: 5px;
+    border-radius: .5rem;
+    font-weight: 600;
+}
+
+.add-btn{
+    border: 2px solid violet;
+    
+    background: yellow;
+    color: green;
+}
+

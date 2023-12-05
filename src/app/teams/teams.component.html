@@ -10,7 +10,8 @@
             <span></span>
         </a>
     </div>
-    <div *ngIf="selectedNumber>0">Selected: {{selectedNumber}}</div>
+    <div class="select-num" *ngIf="selectedNumber>0">Selected: {{selectedNumber}}</div>
+
     <div id="teams">
         <div class="search-filter">
             <div class="search-bar">
@@ -45,8 +46,9 @@
                     <div><button (click)="AddAvailability(false)">Unavailable</button></div>
                 </div>
                 <div><button (click)="ApplyFilter()">Apply Filters</button></div>
+                <div class="reset" *ngIf="anyChanges"><button (click)="Reset()">Reset</button></div>
             </div>
-            <div class="reset" *ngIf="anyChanges"><button (click)="Reset()">Reset</button></div>
+            
         </div>
         <div class="display">
             <div class="display-data" >
@@ -57,10 +59,10 @@
                         <div>{{user.first_name}} {{user.last_name}}</div>
                     </div>
                     <div class="details">
-                        <div>Contact me at {{user.email}}</div>
-                        <div>I work in {{user.domain}}</div>
+                        <div>Contact me at <span>{{user.email}}</span></div>
+                        <div>I work in <span>{{user.domain}}</span></div>
                     </div>
-                    <div><button [disabled]="user.available==false" class="add-btn" (click)="AddtoTeam(user)">Add To Team</button></div>
+                    <div><button *ngIf="user.available==true" [disabled]="user.available==false" class="add-btn" (click)="AddtoTeam(user)">Add To Team</button><button *ngIf="user.available==false"  [disabled]="user.available==false" (click)="AddtoTeam(user)">Unavailable</button></div>
                 </div>
             </div>
 
