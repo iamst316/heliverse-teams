@@ -14,14 +14,39 @@
     <div id="teams">
         <div class="search-filter">
             <div class="search-bar">
-                <input type="search" placeholder="Search by Name" />
+                
+                <input [(ngModel)]="nameQuery" type="search" placeholder="Search by Name" />
+                <button (click)="SearchByName()" type="submit"><img src="../../assets/icons/search.svg" /></button>
+                
             </div>
             <div class="filters">
-                <span>Filter By: </span>
-                <span><button>Gender</button></span>
-                <span><button>Domain</button></span>
-                <span><button>Availability</button></span>
+                <div>Filter By: </div>
+                <div>
+                    <div>Gender: </div>
+                    <div><button (click)="AddGender('Male')">Male</button></div>
+                    <div><button (click)="AddGender('Female')">Female</button></div>
+                    <div><button (click)="AddGender('Agender')">Agender</button></div>
+                    <div><button (click)="AddGender('Bigender')">Bigender</button></div>
+
+                </div>
+                <div>
+                    <div>Domain: </div>
+                    <div><button (click)="AddDomain('IT')">IT</button></div>
+                    <div><button (click)="AddDomain('Sales')">Sales</button></div>
+                    <div><button (click)="AddDomain('Finance')">Finance</button></div>
+                    <div><button (click)="AddDomain('Management')">Management</button></div>
+                    <div><button (click)="AddDomain('UI Designing')">UI</button></div>
+                    <div><button (click)="AddDomain('Marketing')">Marketing</button></div>
+                    <div><button (click)="AddDomain('Business Development')">Business Development</button></div>
+                </div>
+                <div>
+                    <div>Status</div>
+                    <div><button (click)="AddAvailability(true)">Available</button></div>
+                    <div><button (click)="AddAvailability(false)">Unavailable</button></div>
+                </div>
+                <div><button (click)="ApplyFilter()">Apply Filters</button></div>
             </div>
+            <div class="reset" *ngIf="anyChanges"><button (click)="Reset()">Reset</button></div>
         </div>
         <div class="display">
             <div class="display-data" >
@@ -35,7 +60,7 @@
                         <div>Contact me at {{user.email}}</div>
                         <div>I work in {{user.domain}}</div>
                     </div>
-                    <div><button [disabled]="user.available==false" class="add-btn" (click)="AddtoTeam(user.id)">Add To Team</button></div>
+                    <div><button [disabled]="user.available==false" class="add-btn" (click)="AddtoTeam(user)">Add To Team</button></div>
                 </div>
             </div>
 
@@ -46,6 +71,7 @@
 
                 <button [disabled]="currentPage === totalPages" (click)="currentPage = currentPage + 1">Next</button>
             </div>
+            <div *ngIf="team.size>0" class="final-btn"><button (click)="Finalise()">Finalise Team</button></div>
         </div>
     </div>
 </main>
