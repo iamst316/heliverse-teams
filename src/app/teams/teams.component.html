@@ -4,13 +4,48 @@
         <div class="h2">Heliverse Teams</div>
     </div>
     <div class="arrow">
-        <a href="#links">
+        <a href="#teams">
             <span></span>
             <span></span>
             <span></span>
         </a>
     </div>
-    <div id="links">
-        
+    <div *ngIf="selectedNumber>0">Selected: {{selectedNumber}}</div>
+    <div id="teams">
+        <div class="search-filter">
+            <div class="search-bar">
+                <input type="search" placeholder="Search by Name" />
+            </div>
+            <div class="filters">
+                <span>Filter By: </span>
+                <span><button>Gender</button></span>
+                <span><button>Domain</button></span>
+                <span><button>Availability</button></span>
+            </div>
+        </div>
+        <div class="display">
+            <div class="display-data" >
+                
+                <div class="card" *ngFor="let user of paginatedItems">
+                    <div class="name">
+                        <div><img src={{user.avatar}} /></div>
+                        <div>{{user.first_name}} {{user.last_name}}</div>
+                    </div>
+                    <div class="details">
+                        <div>Contact me at {{user.email}}</div>
+                        <div>I work in {{user.domain}}</div>
+                    </div>
+                    <div><button [disabled]="user.available==false" class="add-btn" (click)="AddtoTeam(user.id)">Add To Team</button></div>
+                </div>
+            </div>
+
+            <div class="pages">
+                <button [disabled]="currentPage === 1" (click)="currentPage = currentPage - 1">Previous</button>
+
+                <span>{{ currentPage }} / {{ totalPages }}</span>
+
+                <button [disabled]="currentPage === totalPages" (click)="currentPage = currentPage + 1">Next</button>
+            </div>
+        </div>
     </div>
 </main>
