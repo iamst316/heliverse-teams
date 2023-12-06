@@ -30,9 +30,6 @@ export class TeamsComponent implements OnInit {
     })
   }
 
-  
-  
-
   AddtoTeam(user:any){
     if (this.team.has(user.domain)){
       alert(`A ${user.domain} member is already present in your Team, Please choose another.`)
@@ -64,13 +61,37 @@ export class TeamsComponent implements OnInit {
 
   }
 
-  AddGender(query:string){
+  AddGender(query:string,idx:number){
+    const btns = document.getElementsByClassName("gender-filter");
+    for(let i=0;i<btns.length;i++){
+      btns[i].classList.remove("selected-filter");
+      if(idx==i){
+        btns[i].classList.add("selected-filter");
+      }
+    }
+
     this.queryList.set("gender",query);
   }
-  AddDomain(query:string){
+  AddDomain(query:string,idx:number){
+    const btns = document.getElementsByClassName("domain-filter");
+    for(let i=0;i<btns.length;i++){
+      btns[i].classList.remove("selected-filter");
+      if(idx==i){
+        btns[i].classList.add("selected-filter");
+      }
+    }
+    
     this.queryList.set("domain",query);
   }
-  AddAvailability(query:boolean){
+  AddAvailability(query:boolean,idx:number){
+    const btns = document.getElementsByClassName("status-filter");
+    for(let i=0;i<btns.length;i++){
+      btns[i].classList.remove("selected-filter");
+      if(idx==i){
+        btns[i].classList.add("selected-filter");
+      }
+    }
+    
     this.queryList.set("status",query);
 
   }
@@ -119,6 +140,13 @@ export class TeamsComponent implements OnInit {
   Reset(){
     this.display = this.data;
     this.anyChanges = false;
+    this.queryList.clear();
+
+    const btns = document.getElementsByClassName("filter-btn");
+    for(let i=0;i<btns.length;i++){
+      btns[i].classList.remove("selected-filter");
+      
+    }
   }
 
   Finalise(){
@@ -129,4 +157,5 @@ export class TeamsComponent implements OnInit {
     this.router.navigate(["/display"])
 
   }
+
 }

@@ -1,0 +1,74 @@
+section {
+  border: 2px solid red;
+  padding: 1.25rem;
+  width: auto;
+}
+
+.title {
+  margin-top: 3.5rem;
+  text-align: center;
+  font-weight: 500;
+  font-size: xx-large;
+}
+
+.team-display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.member {
+  flex: 0 0 200px;
+  margin: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 2px 2px 2px 2px #eee;
+  padding: 15px;
+  transition: all 0.5s ease-in-out;
+}
+
+.member:hover {
+  box-shadow: -2px 2px 2px 2px rgb(237, 238, 170);
+  color: #ff5252;
+}
+
+.member > div {
+  margin-top: 10px;
+}
+
+.member img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.member div {
+  margin: 5px 0;
+}
+
+.male{
+  border: 2px solid lightblue;
+}
+.female{
+  border: 2px solid lightpink;
+}
+.agender{
+  border: 2px solid #ddd;
+}
+.bigender{
+  border: 2px solid yellow;
+}
+.polygender{
+  border: 2px solid green;
+}
+.fluid{
+  border: 2px solid purple;
+
+}
+.queer{
+  border: 2px solid black;
+}
+.non-binary{
+  border: 2px solid orangered;
+}

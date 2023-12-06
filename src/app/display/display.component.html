@@ -3,8 +3,21 @@
         Your Team
     </div>
     <div class="team-display">
-        <div class="member" *ngFor="let user of team">
-            {{user.first_name}}
+        <div [ngClass]="{
+            'male': user.gender=='Male',
+            'female': user.gender=='Female',
+            'bigender': user.gender=='Bigender',
+            'agender': user.gender=='Agender',
+            'polygender': user.gender=='Polygender',
+            'fluid': user.gender=='Genderfluid',
+            'queer': user.gender=='Genderqueer',
+            'non-binary': user.gender=='Non-binary',
+            
+          }" class="member" *ngFor="let user of team">
+            <div><img src={{user.avatar}}></div>
+            <div>{{user.first_name}} {{user.last_name}}</div>
+            <div>{{user.domain}}</div>
+            <div>{{user.email}}</div>
         </div>
     </div>
 </section>

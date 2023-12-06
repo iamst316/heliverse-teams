@@ -2,22 +2,25 @@ footer{
     background-color: var(--footer-blue);
     color: #fff;
     padding: 4rem;
+    border: 2px solid red;
+    /* margin: 0 auto;
+    width: 70%; */
 }
-.title{
+.footer-title{
     /* border: 2px dotted var(--bone); */
     display: flex;
     justify-content: space-between;
 }
 
-.title div{
+.footer-title div{
     /* border: 2px solid red; */
     width: 55%;
-    font-size: 3.5rem;
+    font-size: clamp(2rem,3.5rem,3.5rem);
     color: var(--bone);
     font-weight: 700;
 }
 
-.title>img{
+.footer-title>img{
     width: 10%;
     filter: invert(100%);
 }
